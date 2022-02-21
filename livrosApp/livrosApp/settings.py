@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'livrosApp.settings',
-    'meusLivrosApp.apps.MeuslivrosappConfig',
+    'livrosApp',
+    'livrosApp.meusLivrosApp.apps.MeuslivrosappConfig',
+    #  'meusLivrosApp.apps.MeuslivrosappConfig',
 ]
 
 MIDDLEWARE = [
