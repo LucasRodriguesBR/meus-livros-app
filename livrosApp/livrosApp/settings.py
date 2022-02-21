@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'livrosApp',
-    'livrosApp.meusLivrosApp.apps.MeuslivrosappConfig',
+    'meusLivrosApp',
+    #  'meusLivrosApp.apps.MeuslivrosappConfig',
     #  'meusLivrosApp.apps.MeuslivrosappConfig',
 ]
 
