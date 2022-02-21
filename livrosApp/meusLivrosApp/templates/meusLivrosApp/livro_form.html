@@ -1,0 +1,21 @@
+<div class="container">
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<hr>
+<h1 align="center">Adicione um livro nesta página:</h1>
+<p align="center">Nesta página você pode cadastrar um novo livro que você leu.<br>
+Adicione o título do livro, o autor, uma breve resenha(o que você achou do livro)
+e, por fim, qual o mês do ano que você leu o livro.
+</p>
+
+<form action='' method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <div class="">
+    <input class="btn btn-primary btn-lg" type="submit" value="Cadastrar">
+    </div>
+</form>
+
+{% endblock content %}
+</div>

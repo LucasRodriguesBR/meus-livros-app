@@ -1,0 +1,47 @@
+<div class="container">
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+  <hr>
+  <p style="text-align:center">Aqui estão listados todos os livros que você cadastrou.<br> Você pode acrescentar novos
+    livros(clicando no botão adicionar livro no menu superior, ou você pode editar ou deletar os livros já cadastrados.</p>
+  <br>
+  <table class="table overflow-y:hidden" style="box-sizing:border-box">
+  <thead>
+    <tr>
+      <th class="table-dark" scope="col" style="padding:20 text-align:center">Número</th>
+      <th class="table-dark" scope="col" style="padding:20 text-align:center">Nome do livro</th>
+      <th class="table-dark" scope="col" style="padding:20 text-align:center">Autor</th>
+      <th class="table-dark" scope="col" style="padding:20 text-align:center">Resenha</th>
+      <th class="table-dark" scope="col" style="padding:20 text-align:center">Data de conclusão</th>
+      <th class="table-dark" scope="col" >Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for livro in livros %}
+
+    <tr style="background-color:#F5F5F5" >
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{livro.nome}}</td>
+      {% if livro.autor == None %}
+      <td>Desconhecido</td>
+      {% else %}
+      <td>{{livro.autor}}</td>
+      {% endif %}
+      <td>{{livro.resenha}}</td>
+      {% if livro.data == None %}
+      <td>Sem data cadastrada</td>
+      {% else %}
+      <td>{{livro.data}}</td>
+      {% endif %}
+      <td>
+      <a type="submit" href="{% url 'editar-livro' livro.id %}" class="btn btn-success">Editar</a>
+      <a type="submit" href="{% url 'deletar-livro' livro.id %}" class="btn btn-danger">Deletar</a>
+      </td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+{% endblock content %}
+</div>

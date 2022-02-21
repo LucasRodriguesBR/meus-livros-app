@@ -1,0 +1,18 @@
+<div class="container">
+{% extends 'main.html' %}
+{% block content %}
+<hr>
+<div class="deletar">
+    <form method="POST">
+        {% csrf_token %}
+        <h2 id="titulo-deletar">Você está prestes a deletar:</h2>
+        <h2 id="titulo-deletar-n">Livro: {{livro.nome}}</h2>
+        <h5 id="titulo-deletar-a">Autor: {{livro.autor}}</h5>
+        <h2 id="titulo-deletar-c">Tem certeza disso? Essa ação é irreversível! </h2>
+        <br>
+        <a href="{% url 'livros' %}" class="btn btn-success" >Não quero deletar</a>
+        <input type="submit" class="btn btn-danger" value="Tenho certeza">
+    </form>
+</div>
+{% endblock content %}
+</div>

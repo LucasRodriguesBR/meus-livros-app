@@ -1,0 +1,35 @@
+.deletar {
+    margin:auto;
+}
+
+#titulo-deletar {
+    
+    color:black;
+}
+
+#titulo-deletar-n {
+    margin-top:15px;
+    font-weight: 800;
+    color:red;
+}
+
+#titulo-deletar-a {
+    font-weight: 800;
+    color:red;
+}
+
+#titulo-deletar-c {
+    margin-top:15px;
+}
+
+@media(max-widht: 500px){
+    table {
+        display: none;
+    }
+
+}
+
+table {
+    display: block;
+    width:100%;
+}
